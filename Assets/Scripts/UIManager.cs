@@ -13,15 +13,13 @@ public class UIManager : MonoBehaviour
     private bool timerStarted;
     [SerializeField] private float timerValue;
 
-    // EndGame Panel Variables
-    [SerializeField] private GameObject endGamePanel;
-
+    // Text Variables
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI enemyText;
 
     // Sprite Variables
-    Image button;
+    private Image button;
     public Sprite[] pauseAndResumeButton;
 
     void Start()
@@ -61,10 +59,6 @@ public class UIManager : MonoBehaviour
     public void EnemyCount()
     {
         enemyText.text = enemySpawnner.enemyCount.ToString();
-    }
-    void EndGamePanel(bool isActivated)
-    {
-        isActivated = true;
     }
     public void PauseButton() 
     {

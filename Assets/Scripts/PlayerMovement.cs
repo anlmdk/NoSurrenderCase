@@ -9,13 +9,9 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     private Rigidbody rb;
     private Vector3 direction;
-    [SerializeField] private float smoothTime;
 
     [SerializeField] private float moveSpeed;
     [SerializeField] private float rotationSpeed;
-
-    private Vector3 targetVelocity;
-    private Vector3 currentVelocity;
 
     void Start()
     {
@@ -25,18 +21,15 @@ public class PlayerMovement : MonoBehaviour
     
     void Update()
     {
-        Move();
-        Rotate();
+        if (GameManager.instance.gameStarted is true)
+        {
+            Move();
+            Rotate();
+        }
     }
     private void Move()
     {
-        float x = joystick.Horizontal;
-        float z = joystick.Vertical;
-
-        Vector3 movement = new Vector3(x, 0, z);
-        targetVelocity = movement * moveSpeed;
-
-        rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref currentVelocity, smoothTime);
+        rb.velocity = transform.forward * moveSpeed;
 
         if (rb.velocity.magnitude > 0.1f)
         {
@@ -52,7 +45,6 @@ public class PlayerMovement : MonoBehaviour
     {
         float x = joystick.Horizontal;
         float z = joystick.Vertical;
-
         direction = new Vector3(x, 0, z);
         if (direction.magnitude >= 0.1f)
         {

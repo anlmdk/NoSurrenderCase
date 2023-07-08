@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public UIManager uiManager;
-    
     public static GameManager instance;
+
+    public UIManager uiManager;
 
     public bool gameStarted;
     public bool gamePaused = false;
@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         gameStarted = false;
+
         Invoke(nameof(RestartGame),3f);
     }
 }

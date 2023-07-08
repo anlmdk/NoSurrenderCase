@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemySpawnner : MonoBehaviour
 {
     public GameObject enemyPrefab;
+    public Transform enemyParentTransform;
 
     public int enemyCount;
 
@@ -21,10 +22,10 @@ public class EnemySpawnner : MonoBehaviour
     {
         for (int i = 0; i < enemyCount; i++)
         {
-            Debug.Log(Instantiate(enemyPrefab, GetRandomPosition(), Quaternion.identity) + "true");
+            Instantiate(enemyPrefab, GetRandomPosition(), Quaternion.identity, enemyParentTransform);
         }
     }
-    private Vector3 GetRandomPosition()
+    public Vector3 GetRandomPosition()
     {
         float x = Random.Range(-5f, 5f);
         float y = 1f;
