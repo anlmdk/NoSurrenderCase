@@ -10,8 +10,12 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     private Vector3 direction;
 
+    public bool moveable;
+
     [SerializeField] private float moveSpeed;
     [SerializeField] private float rotationSpeed;
+
+    private string IS_WALKING = "isWalking";
 
     void Start()
     {
@@ -23,21 +27,18 @@ public class PlayerMovement : MonoBehaviour
     {
         if (GameManager.instance.gameStarted is true)
         {
+            moveable = true;
             Move();
             Rotate();
         }
     }
     private void Move()
     {
-        rb.velocity = transform.forward * moveSpeed;
+        if (moveable)
+        {
+            rb.velocity = transform.forward * moveSpeed;
 
-        if (rb.velocity.magnitude > 0.1f)
-        {
-            anim.SetBool("isWalking", true);
-        }
-        else
-        {
-            anim.SetBool("isWalking", false);
+            if (rb.velocity.magnitude > 0.1f) { anim.SetBool(IS_WALKING, true); }
         }
     }
 
@@ -45,7 +46,9 @@ public class PlayerMovement : MonoBehaviour
     {
         float x = joystick.Horizontal;
         float z = joystick.Vertical;
+
         direction = new Vector3(x, 0, z);
+
         if (direction.magnitude >= 0.1f)
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;

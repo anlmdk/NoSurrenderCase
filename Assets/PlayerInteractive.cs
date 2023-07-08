@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class PlayerInteractive : MonoBehaviour
 {
+    private UIManager _uiManager;
+    private PlayerMovement _player;
+
     private Rigidbody rb;
-    
+    private Animator anim;
+
     [SerializeField] private float scaleMultiplier;
     [SerializeField] private float pushPower;
 
@@ -13,6 +17,8 @@ public class PlayerInteractive : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
+        _player = GetComponent<PlayerMovement>();
     }
 
     void Update()
@@ -34,7 +40,29 @@ public class PlayerInteractive : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Water"))
         {
-            GameManager.instance.EndGame();
+            WaterInteraction();
         }
+        else if (other.gameObject.CompareTag("Collectable"))
+        {
+            CollectableInteraction();
+            Destroy(other.gameObject);
+        }
+    }
+    private void WaterInteraction()
+    {
+        anim.SetTrigger("isDying");
+
+        _player.moveable = false;
+
+        PlayerCameraTracking cam = GetComponent<PlayerCameraTracking>();
+        if (cam != null)
+        {
+            cam.enabled = false;
+        }
+        GameManager.instance.EndGame();
+    }
+    private void CollectableInteraction()
+    {
+        GameManager.instance.score += 100;
     }
 }

@@ -7,10 +7,12 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public UIManager uiManager;
+    public UIManager _uiManager;
 
     public bool gameStarted;
     public bool gamePaused = false;
+
+    public int score = 0;
 
     void Awake()
     {
@@ -22,6 +24,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(instance);
         }
+        score = 0;
     }
     void Update()
     {
@@ -45,7 +48,7 @@ public class GameManager : MonoBehaviour
             gamePaused = true;
             Time.timeScale = 0f;
 
-            uiManager.PauseButton();
+            _uiManager.PauseButton();
 
             Debug.Log("Game Paused");
         }
@@ -54,7 +57,7 @@ public class GameManager : MonoBehaviour
             gamePaused = false;
             Time.timeScale = 1f;
 
-            uiManager.ResumeButton();
+            _uiManager.ResumeButton();
 
             Debug.Log("Game Resumed");
         }
@@ -66,7 +69,7 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         gameStarted = false;
-
-        Invoke(nameof(RestartGame),3f);
+        
+        Invoke(nameof(RestartGame),1f);
     }
 }

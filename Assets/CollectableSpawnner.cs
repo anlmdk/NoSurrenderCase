@@ -56,9 +56,9 @@ public class CollectableSpawnner : MonoBehaviour, IGetRandomPosition
     }
     public Vector3 GetRandomPosition()
     {
-        float x = Random.Range(-5f, 5f);
-        float y = 1f;
-        float z = Random.Range(-5f, 5f);
+        float x = Random.Range(-10f, 10f);
+        float y = 1.5f;
+        float z = Random.Range(-10f, 10f);
 
         return new Vector3(x, y, z);
     }
