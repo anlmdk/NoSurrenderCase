@@ -1687,9 +1687,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7690e4e93c9c4d94f9ea9edd4871124b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiManager: {fileID: 1060954694}
   gameStarted: 0
   gamePaused: 0
-  uiManager: {fileID: 1060954694}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2456,6 +2456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de6effc69ddae394f929c16d5fe00a5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemySpawnner: {fileID: 1493788222}
   timerValue: 200
   endGamePanel: {fileID: 923159390}
   timerText: {fileID: 221747940}
@@ -2464,7 +2465,6 @@ MonoBehaviour:
   pauseAndResumeButton:
   - {fileID: 21300000, guid: 651839ae9f81f2c4c8d6b700276287ed, type: 3}
   - {fileID: 21300000, guid: d14cba60ce5d8fb4eaf95285a3a4743a, type: 3}
-  enemySpawnner: {fileID: 1493788222}
 --- !u!1 &1165834485
 GameObject:
   m_ObjectHideFlags: 0
@@ -2835,7 +2835,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1493788220}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b082c6350117db409302b1ccf39044d, type: 3}
   m_Name: 

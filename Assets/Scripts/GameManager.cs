@@ -12,8 +12,6 @@ public class GameManager : MonoBehaviour
     public bool gameStarted;
     public bool gamePaused = false;
 
-    
-
     void Awake()
     {
         if (instance == null)
@@ -40,7 +38,7 @@ public class GameManager : MonoBehaviour
     {
         gameStarted = true;
     }
-    public void ResumeorPauseGame()
+    public void ResumeOrPauseGame()
     {
         if (gamePaused is false)
         {
