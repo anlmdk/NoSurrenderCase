@@ -75,7 +75,7 @@ public class PlayerInteractive : MonoBehaviour
             Invoke(nameof(MoveableAfterPush), pushPower / 160);
 
             newRb = other.GetComponent<Rigidbody>();
-            newRb.AddForce(transform.forward * (pushPower * 20f), ForceMode.Impulse);
+            newRb.AddForce(transform.forward * (pushPower * 5f), ForceMode.Impulse);
         }
     }
     // Activate and deactivate the NavMeshAgent component of the enemy
