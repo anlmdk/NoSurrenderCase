@@ -13,4 +13,4 @@ https://github.com/anlmdk/NoSurrenderCase/assets/47008814/9af7fdf7-348a-482d-bcd
 
 ![Ekran görüntüsü 2023-07-10 003953](https://github.com/anlmdk/NoSurrenderCase/assets/47008814/edb5ad27-bd0d-43d3-b062-09b74902c3f5)
 ![Ekran görüntüsü 2023-07-10 003811](https://github.com/anlmdk/NoSurrenderCase/assets/47008814/a054edae-9281-4c7b-8589-7dccfa0ea3eb)
-![Uploading Ekran görüntüsü 2023-07-10 003936.png…]()
+![Ekran görüntüsü 2023-07-10 003936](https://github.com/anlmdk/NoSurrenderCase/assets/47008814/c7d2e7f9-31d3-4aa8-9a0c-382f4c5494a0)
