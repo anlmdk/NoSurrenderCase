@@ -40,6 +40,9 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         gameStarted = true;
+        EnemySpawnner.instance.InstantiateEnemy();
+        CollectableSpawnner.instance.InstantiateCollectable();
+        CollectableSpawnner.instance.InstantiateCollectableClone();
     }
     public void ResumeOrPauseGame()
     {
@@ -69,7 +72,7 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         gameStarted = false;
-        
-        Invoke(nameof(RestartGame),1f);
+        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<PlayerCameraTracking>().enabled = false;
+        Invoke(nameof(RestartGame),2f);
     }
 }

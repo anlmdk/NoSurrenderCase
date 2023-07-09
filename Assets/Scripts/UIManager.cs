@@ -6,9 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
-{
-    public EnemySpawnner _enemySpawnner;
-    
+{ 
     // Timer Variables
     private bool timerStarted;
     [SerializeField] private float timerValue;
@@ -59,7 +57,7 @@ public class UIManager : MonoBehaviour
     }
     public void EnemyCount()
     {
-        enemyText.text = _enemySpawnner.enemyCount.ToString();
+        enemyText.text = EnemySpawnner.instance.enemyCount.ToString();
     }
     public void ScoreCount()
     {

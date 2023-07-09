@@ -7870,6 +7870,8 @@ GameObject:
   - component: {fileID: 3073409071128361281}
   - component: {fileID: 3073409071128361283}
   - component: {fileID: 3073409071128361282}
+  - component: {fileID: 4728155295725344374}
+  - component: {fileID: -8129461390312774650}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -7885,7 +7887,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2767348265419310102}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8043,7 +8045,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2767348265419310102}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.14431624
   m_Height: 0.4220535
@@ -8075,7 +8077,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -8087,6 +8089,34 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &4728155295725344374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2767348265419310102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 458ebce72f89ad94ab53b7b0c7cafd76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyNavMesh: {fileID: 3073409071128361282}
+  targetLocatedPosition: 0
+--- !u!114 &-8129461390312774650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2767348265419310102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ef76b67f4f9017489f114004d0a434a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleMultiplier: 1.5
+  enemyScaleCount: 1
 --- !u!1 &2776202944920818453
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5207885233538780485}
   - component: {fileID: 8044228618370693519}
   - component: {fileID: 8674850902871311137}
+  - component: {fileID: 1719161252733151736}
   m_Layer: 0
   m_Name: Pizza
   m_TagString: Collectable
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8404327403616966746}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.5, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 10, y: 20, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -109,3 +110,23 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 7846685681052900924, guid: 836a4f6ddf247af4e8c9ae557b7cf4a3, type: 3}
+--- !u!95 &1719161252733151736
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8404327403616966746}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 55d447d4b5a5bd84e96ba269310f7fcc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

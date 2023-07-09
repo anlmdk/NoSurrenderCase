@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class EnemySpawnner : MonoBehaviour
+public class EnemySpawnner : MonoBehaviour, IGetRandomPosition
 {
     public static EnemySpawnner instance;
 
+    [SerializeField] private Transform parentTransform;
     public GameObject enemyPrefab;
-    public Transform enemyParentTransform;
 
     public int enemyCount;
 
@@ -23,27 +23,18 @@ public class EnemySpawnner : MonoBehaviour
             Destroy(instance);
         }
     }
-
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0) && !GameManager.instance.gameStarted)
-        {
-            GameManager.instance.gameStarted = true;
-            InstantiateEnemy();
-        }
-    }
-    private void InstantiateEnemy()
+    public void InstantiateEnemy()
     {
         for (int i = 0; i < enemyCount; i++)
         {
-            Instantiate(enemyPrefab, GetRandomPosition(), Quaternion.identity,enemyParentTransform);
+            Instantiate(enemyPrefab, GetRandomPosition(), Quaternion.identity , parentTransform);
         }
     }
     public Vector3 GetRandomPosition()
     {
-        float x = Random.Range(-2f, 2f);
+        float x = Random.Range(-15f, 15f);
         float y = 1f;
-        float z = Random.Range(-2f, 2f);
+        float z = Random.Range(-15f, 15f);
 
         return new Vector3(x, y, z);
     }

@@ -6,14 +6,16 @@ public class PlayerMovement : MonoBehaviour
 {
     public FloatingJoystick joystick;
 
+    public ParticleSystem walkEffect;
+
     private Animator anim;
     private Rigidbody rb;
     private Vector3 direction;
 
     public bool moveable;
 
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private float rotationSpeed;
+    public float moveSpeed;
+    public float rotationSpeed;
 
     private string IS_WALKING = "isWalking";
 
@@ -21,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+        walkEffect = GetComponent<ParticleSystem>();
+        walkEffect.Stop();
     }
     
     void Update()
@@ -38,7 +42,12 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = transform.forward * moveSpeed;
 
-            if (rb.velocity.magnitude > 0.1f) { anim.SetBool(IS_WALKING, true); }
+            if (rb.velocity.magnitude > 0.1f) 
+            {
+                anim.SetBool(IS_WALKING, true);
+                walkEffect.Play();
+            }
+            
         }
     }
 
