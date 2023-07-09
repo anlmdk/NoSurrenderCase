@@ -36,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
             Rotate();
         }
     }
+    // Handle player movement
     private void Move()
     {
         if (moveable)
@@ -50,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
             
         }
     }
-
+    // Handle player rotation
     private void Rotate()
     {
         float x = joystick.Horizontal;

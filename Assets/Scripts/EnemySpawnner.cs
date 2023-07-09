@@ -23,6 +23,7 @@ public class EnemySpawnner : MonoBehaviour, IGetRandomPosition
             Destroy(instance);
         }
     }
+    // Instantiate enemy objects at random positions
     public void InstantiateEnemy()
     {
         for (int i = 0; i < enemyCount; i++)
@@ -30,6 +31,7 @@ public class EnemySpawnner : MonoBehaviour, IGetRandomPosition
             Instantiate(enemyPrefab, GetRandomPosition(), Quaternion.identity , parentTransform);
         }
     }
+    // Get a random position within a specified range
     public Vector3 GetRandomPosition()
     {
         float x = Random.Range(-15f, 15f);

@@ -30,6 +30,7 @@ public class CollectableSpawnner : MonoBehaviour, IGetRandomPosition
     {
         collectables = new List<GameObject>();
     }
+    // Instantiate collectable objects at random positions
     public void InstantiateCollectable()
     {
         for (int i = 0; i < collectableCount; i++)
@@ -37,6 +38,7 @@ public class CollectableSpawnner : MonoBehaviour, IGetRandomPosition
             Instantiate(collabtablePrefab, GetRandomPosition(), Quaternion.identity, parentTransform);
         }
     }
+    // Instantiate a clone of a collectable object at a random position
     public void InstantiateCollectableClone()
     {
         GameObject clone = Instantiate(collabtablePrefab, GetRandomPosition(), Quaternion.identity, parentTransform);
@@ -45,6 +47,7 @@ public class CollectableSpawnner : MonoBehaviour, IGetRandomPosition
         collectables.Add(clone);
         
     }
+    // Get a random position within a specified range
     public Vector3 GetRandomPosition()
     {
         float x = Random.Range(-15f, 15f);

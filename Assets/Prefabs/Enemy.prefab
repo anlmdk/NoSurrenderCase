@@ -7874,7 +7874,7 @@ GameObject:
   - component: {fileID: -8129461390312774650}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8030,7 +8030,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 32f2b19ae8905a14f9dc27ebcd82733e, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -8065,7 +8065,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!195 &3073409071128361282
 NavMeshAgent:
@@ -8076,8 +8076,8 @@ NavMeshAgent:
   m_GameObject: {fileID: 2767348265419310102}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 5
+  m_Radius: 0.3
+  m_Speed: 8
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -8085,9 +8085,9 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 0.6
+  m_Height: 0.7
   m_BaseOffset: 0
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
 --- !u!114 &4728155295725344374
 MonoBehaviour:
@@ -8102,7 +8102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyNavMesh: {fileID: 3073409071128361282}
-  targetLocatedPosition: 0
+  targetLocatedPosition: 1
 --- !u!114 &-8129461390312774650
 MonoBehaviour:
   m_ObjectHideFlags: 0

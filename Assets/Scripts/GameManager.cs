@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     }
     void GameEvent()
     {
+        // If user hit screen and gameStarted is true, game will be start
         if (Input.GetMouseButtonDown(0) && !gameStarted)
         {
             StartGame();
@@ -40,6 +41,8 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         gameStarted = true;
+
+        // Instantiate spawnner items
         EnemySpawnner.instance.InstantiateEnemy();
         CollectableSpawnner.instance.InstantiateCollectable();
         CollectableSpawnner.instance.InstantiateCollectableClone();
@@ -49,6 +52,7 @@ public class GameManager : MonoBehaviour
         if (gamePaused is false)
         {
             gamePaused = true;
+
             Time.timeScale = 0f;
 
             _uiManager.PauseButton();

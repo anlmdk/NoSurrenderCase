@@ -55,14 +55,17 @@ public class UIManager : MonoBehaviour
             return;
         }
     }
+    // Set EnemyCount text on UI
     public void EnemyCount()
     {
         enemyText.text = EnemySpawnner.instance.enemyCount.ToString();
     }
+    // Set ScoreCount text on UI
     public void ScoreCount()
     {
         scoreText.text = GameManager.instance.score.ToString();
     }
+    // Pause&Resume button sprite change from Sprite Array
     public void PauseButton() 
     {
        button.sprite = pauseAndResumeButton[0];

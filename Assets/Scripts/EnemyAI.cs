@@ -21,21 +21,31 @@ public class EnemyAI : MonoBehaviour
             FindNearestCollectable();
         }
     }
+    // Find the nearest collectable object and set it as the destination for the enemy
     private void FindNearestCollectable()
     {
-        int randomIndex = Random.Range(0, CollectableSpawnner.instance.collectables.Count);
-        var randomTargetCollectable = CollectableSpawnner.instance.collectables[randomIndex];
+        if (CollectableSpawnner.instance.collectables.Count == 0)
+        {
+            return;
+        }
 
-        if (!enemyNavMesh.enabled) return;
+        List<GameObject> collectablesCopy = new List<GameObject>(CollectableSpawnner.instance.collectables);
 
-        enemyNavMesh.SetDestination(randomTargetCollectable.transform.position);
-        targetLocatedPosition = true;
+        int randomIndex = Random.Range(0, collectablesCopy.Count);
+        var randomTargetCollectable = collectablesCopy[randomIndex];
+
+        if (enemyNavMesh.isActiveAndEnabled)
+        {
+            enemyNavMesh.SetDestination(randomTargetCollectable.transform.position);
+            targetLocatedPosition = true;
+        }
     }
+    // Continuously reset the targetLocatedPosition flag at regular intervals
     private IEnumerator TargetLocatedFalse()
     {
         while (true)
         {
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(2f);
             if (enemyNavMesh.enabled) targetLocatedPosition = false;
         }
     }
